@@ -49,7 +49,7 @@ const Rodape = () => {
             <ListaEstilizada>
                 {listaDeImagens.map((img) => {
                     return (
-                        <ItemEstilizado>
+                        <ItemEstilizado key={img.alt}>
                             <a href="#">
                                 <img src={img.src} alt={`Logo do ${img.alt}`} />
                             </a>
