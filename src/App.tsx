@@ -7,12 +7,15 @@ import Tabela from "./components/Tabela";
 import useDadosConsulta from "./useDadosConsulta";
 import Grafico from "./components/Grafico";
 import useDadosProficional from "./useDadosProficional";
+import Avaliacao from "./components/Avaliacao";
+import Botao from "./components/Botao";
+import Subtitulo from "./components/Subtitulo";
 
 function App() {
     const { dados: consultas, erro: consultasError } = useDadosConsulta();
-    const { dados: proficionais, erro: proficionaisError } = useDadosProficional();
-    
-    if(consultasError || proficionaisError) {
+    const { dados: profissionais, erro: profissionaisError } = useDadosProficional();
+
+    if (consultasError || profissionaisError) {
         console.log("Algo de errado não esta certo...");
     }
 
@@ -21,8 +24,14 @@ function App() {
             <Cabecalho />
             <Container>
                 <Titulo>Área Administrativa</Titulo>
+                <Botao>Cadastrar especialista</Botao>
+                <Titulo imagem="consulta">Consultas do Dia</Titulo>
                 <Tabela consultas={consultas} />
-                <Grafico consultas={consultas} proficionais={proficionais}/>
+                <Titulo imagem="grafico">Consultas mensais por especialista</Titulo>
+                <Subtitulo>Dezembro/22</Subtitulo>
+                <Grafico consultas={consultas} profissionais={profissionais} />
+                <Titulo imagem="avaliacao">Avaliações de especialistas</Titulo>
+                <Avaliacao profissionais={profissionais} />
             </Container>
             <Rodape />
         </>

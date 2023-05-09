@@ -1,4 +1,4 @@
-import IProficional from "./types/IProficional";
+import IProficional from "./types/IProfissional";
 import useFetch from "./useFetch";
 
 const useDadosProficional = () => {

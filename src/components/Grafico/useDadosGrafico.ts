@@ -1,5 +1,5 @@
 import IConsulta from "../../types/IConsulta";
-import IProficional from "../../types/IProficional";
+import IProfissional from "../../types/IProfissional";
 
 interface IDados {
     nome: string;
@@ -7,11 +7,11 @@ interface IDados {
 }
 
 interface Props {
-    proficionais?: IProficional[] | null;
+    profissionais?: IProfissional[] | null;
     consultas?: IConsulta[] | null;
 }
 
-const useDadosGrafico = ({ proficionais, consultas }: Props) => {
+const useDadosGrafico = ({ profissionais: proficionais, consultas }: Props) => {
     // let dados: Array<IDados> = [];
     let dados: IDados[] = [];
 
